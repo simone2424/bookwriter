@@ -40,7 +40,7 @@ function App() {
 		prompt += "\t\t-Some other matter addressed\n";
 		prompt += "\t\t-A point about something\n";
 		prompt += "\t\t-Some last point of the section\n";
-		prompt += "\nTry to generate at least 5 sections per chapter, and 6 points per section, if possible.\n";
+		prompt += "\nTry to generate at least 10 sections per chapter, and 8 points per section, if possible.\n";
 		
 		setBook({
 			...book,
@@ -128,9 +128,10 @@ function App() {
 	const generateContent = async () => {
 		let prompt = `The book's name is "${book.title}".\n`;
 		prompt += `The description of the book is "${book.description}"\n\n`;
-		prompt += `Write the content for the following part of the book:\n`;
+		prompt += `Write the content in first person casual informative friendly tone, active voice, seo-friendly, engaging with using bulletpoints, tables, symbols, icons for the following part of the book:\n`;
 		prompt += `-${book.parts[book.selectedChapter][book.selectedSection][book.selectedItem][book.selectedPart]}\n`;
-		prompt += `The text must absolutely contain at least 1000 words !\n`;
+		prompt += `The text must absolutely contain at least 2000 words !\n`;
+		prompt += `Write the content in the style of TechCrunch.com, IndieHacker, New York Times, TMZ, as well as craft the content in the style of a engaging magazine. Ensure to add H3 Bold clickbait Titles to each paragraph section:\n`;
 
 		setBook({
 			...book,
